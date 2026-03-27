@@ -96,6 +96,21 @@ def save_world(world):
         json.dump(world, f, indent=4)
     os.replace(WORLD_FILE + ".tmp", WORLD_FILE)
 
+def sanitize_world(world):
+    world.setdefault("territories", {})
+    world.setdefault("cartels", {})
+
+    for city, t in world["territories"].items():
+        t.setdefault("owner", None)
+        t.setdefault("control", 0)
+        t.setdefault("defense", 0)
+        t.setdefault("conflict", False)
+
+    for cartel in world["cartels"].values():
+        cartel.setdefault("name", "Unknown")
+        cartel.setdefault("power", 50)
+        cartel.setdefault("strategy", "balanced")
+
 # =========================
 # PLAYER
 # =========================
@@ -165,9 +180,32 @@ def create_player():
     }
 
 def ensure_player(p):
-    if "hierarchy" not in p:
-        p["hierarchy"] = {"underboss": None, "lieutenants": [], "capos": []}
+    if not isinstance(p, dict):
+        return create_player()
 
+    defaults = {
+        "name": "Unknown",
+        "location": "Unknown",
+        "heat": 0,
+        "cash": 0,
+        "bank": 0,
+        "crew": [],
+        "firepower": 0,
+        "reputation": 0,
+        "cartel": None,
+        "in_prison": False,
+        "hierarchy": {
+            "underboss": None,
+            "lieutenants": [],
+            "capos": []
+        }
+    }
+
+    for key, value in defaults.items():
+        if key not in p:
+            p[key] = value
+
+    return p
 # =========================
 # NPC GENERATION
 # =========================
@@ -269,7 +307,13 @@ def world_war_tick(world):
     territories = world["territories"]
 
     for city in territories:
-        territories[city]["defense"] = max(0, territories[city]["defense"] - 2)
+        t = territories[city]
+        t.setdefault("defense", 0)
+        t.setdefault("control", 0)
+        t.setdefault("owner", None)
+        t.setdefault("conflict", False)
+
+        t["defense"] = max(0, t["defense"] - 2)
 
     for city, data in territories.items():
 
@@ -352,6 +396,14 @@ def evolve_cartels(world, p):
     profile = analyze_player(p, world)
 
     for cartel in world["cartels"].values():
+
+        cartel.setdefault("name", "Unknown")
+        cartel.setdefault("power", 50)
+        cartel.setdefault("aggression", 50)
+        cartel.setdefault("strategy", "balanced")
+        cartel.setdefault("target", None)
+        cartel.setdefault("adaptation", 0)
+        cartel.setdefault("personality", "balanced")
 
         # skip player cartel
         if cartel["name"] == p.get("cartel"):
@@ -824,8 +876,10 @@ def passive_income(p, world):
 
     territories = world["territories"]
 
+    owner_name = p.get("cartel") or p.get("name")
+
     for city, t in territories.items():
-        if t["owner"] == p.get("cartel", p["name"]):
+        if t["owner"] == owner_name:
             total += 2000
 
     p["bank"] += total
@@ -2233,7 +2287,9 @@ async def invade(ctx, *, city):
     defense = base_defense
 
     if strength > defense:
-        territories[city]["owner"] = p.get("cartel", p["name"])
+        owner_name = p.get("cartel") or p.get("name")
+
+        territories[city]["owner"] = owner_name
         territories[city]["control"] = 100
 
         await trigger_scene(ctx.guild, p, "TAKEOVER", f"You seized control of {city}.")
@@ -2376,9 +2432,11 @@ async def actions(ctx):
 async def passive_world_loop():
     data = load_data()
     world = load_world()
+    sanitize_world(world)
 
     for uid, p in data.items():
-        ensure_player(p)
+        p = ensure_player(p)
+        data[uid] = p
 
         # skip prisoners
         if p.get("in_prison"):

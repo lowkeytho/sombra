@@ -1,0 +1,53 @@
+{
+    "name": "",
+    "cartel": null,
+
+    "cash": 2000,
+    "bank": 0,
+    "heat": 10,
+    "dea": 0,
+
+    "location": "Medellin",
+    "day": 1,
+
+    "reputation": 0,
+    "rank": "Street Runner",
+
+    "supply": 0,
+
+    "inventory": {
+        "low": 0,
+        "pure": 0,
+        "high": 0
+    },
+
+    "crew": [],
+
+    "hierarchy": {
+        "underboss": null,
+        "lieutenants": [],
+        "capos": []
+    },
+
+    "assets": {
+        "warehouse": 0,
+        "safehouse": 0,
+        "vehicles": 0,
+        "lab": 0
+    },
+
+    "businesses": [],
+
+    "npc_relations": {},
+    "npc_memory": {},
+    "memory": [],
+
+    "partner": null,
+    "kids": [],
+
+    "stress": 0,
+    "style": "neutral",
+
+    "in_prison": false,
+    "sentence": 0
+}

@@ -1,0 +1,19 @@
+{
+  "cartels": {
+    "Sinaloa": {"name": "Sinaloa Cartel", "power": 80},
+    "Medellin": {"name": "Medellin Cartel", "power": 85},
+    "Bogota": {"name": "Norte del Valle", "power": 75},
+    "Mexico City": {"name": "Federation", "power": 78},
+    "Miami": {"name": "Vice Syndicate", "power": 70},
+    "Los Angeles": {"name": "LA Familia", "power": 82},
+    "New York": {"name": "East Coast Network", "power": 79},
+    "Chicago": {"name": "Midwest Outfit", "power": 77}
+  },
+  "relations": {},
+  "territories": {
+    "Los Angeles": {"owner": null, "control": 0, "conflict": false},
+    "Miami": {"owner": null, "control": 0, "conflict": false},
+    "New York": {"owner": null, "control": 0, "conflict": false},
+    "Chicago": {"owner": null, "control": 0, "conflict": false}
+  }
+}

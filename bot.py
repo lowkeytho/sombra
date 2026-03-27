@@ -120,8 +120,8 @@ def create_player():
         "name": "",
         "cartel": None,
 
-        "cash": 0,
-        "bank": 0,
+        "cash": 5000,
+        "bank": 10000,
         "heat": 10,
         "dea": 0,
 
@@ -184,6 +184,12 @@ def ensure_player(p):
         return create_player()
 
     default = create_player()
+
+    if p.get("cash", 0) == 0:
+        p["cash"] = 5000
+
+    if p.get("bank", 0) == 0:
+        p["bank"] = 10000
 
     for key, value in default.items():
         if key not in p:

@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.env
+
+# Environment variables (CRITICAL)
+.env
+
+# OS files
+.DS_Store
+
+# Logs / temp
+*.log
+
+# VS Code
+.vscode/
+
+# Optional (if you don’t want player data uploaded)
+players.json
+world.json

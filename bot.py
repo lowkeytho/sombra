@@ -183,29 +183,14 @@ def ensure_player(p):
     if not isinstance(p, dict):
         return create_player()
 
-    defaults = {
-        "name": "Unknown",
-        "location": "Unknown",
-        "heat": 0,
-        "cash": 0,
-        "bank": 0,
-        "crew": [],
-        "firepower": 0,
-        "reputation": 0,
-        "cartel": None,
-        "in_prison": False,
-        "hierarchy": {
-            "underboss": None,
-            "lieutenants": [],
-            "capos": []
-        }
-    }
+    default = create_player()
 
-    for key, value in defaults.items():
+    for key, value in default.items():
         if key not in p:
             p[key] = value
 
     return p
+
 # =========================
 # NPC GENERATION
 # =========================

@@ -1,19 +1,103 @@
 {
-  "cartels": {
-    "Sinaloa": {"name": "Sinaloa Cartel", "power": 80},
-    "Medellin": {"name": "Medellin Cartel", "power": 85},
-    "Bogota": {"name": "Norte del Valle", "power": 75},
-    "Mexico City": {"name": "Federation", "power": 78},
-    "Miami": {"name": "Vice Syndicate", "power": 70},
-    "Los Angeles": {"name": "LA Familia", "power": 82},
-    "New York": {"name": "East Coast Network", "power": 79},
-    "Chicago": {"name": "Midwest Outfit", "power": 77}
-  },
-  "relations": {},
-  "territories": {
-    "Los Angeles": {"owner": null, "control": 0, "conflict": false},
-    "Miami": {"owner": null, "control": 0, "conflict": false},
-    "New York": {"owner": null, "control": 0, "conflict": false},
-    "Chicago": {"owner": null, "control": 0, "conflict": false}
-  }
+    "cartels": {
+        "Sinaloa": {
+            "name": "Sinaloa Cartel",
+            "power": 80,
+            "strategy": "territory_war",
+            "aggression": 50,
+            "target": "La Cosa Nostra",
+            "adaptation": 44037,
+            "personality": "balanced"
+        },
+        "Medellin": {
+            "name": "Medellin Cartel",
+            "power": 85,
+            "strategy": "territory_war",
+            "aggression": 50,
+            "target": "La Cosa Nostra",
+            "adaptation": 44037,
+            "personality": "balanced"
+        },
+        "Bogota": {
+            "name": "Norte del Valle",
+            "power": 75,
+            "strategy": "territory_war",
+            "aggression": 50,
+            "target": "La Cosa Nostra",
+            "adaptation": 44037,
+            "personality": "balanced"
+        },
+        "Mexico City": {
+            "name": "Federation",
+            "power": 78,
+            "strategy": "territory_war",
+            "aggression": 50,
+            "target": "La Cosa Nostra",
+            "adaptation": 44037,
+            "personality": "balanced"
+        },
+        "Miami": {
+            "name": "Vice Syndicate",
+            "power": 70,
+            "strategy": "territory_war",
+            "aggression": 50,
+            "target": "La Cosa Nostra",
+            "adaptation": 44037,
+            "personality": "balanced"
+        },
+        "Los Angeles": {
+            "name": "LA Familia",
+            "power": 82,
+            "strategy": "territory_war",
+            "aggression": 50,
+            "target": "La Cosa Nostra",
+            "adaptation": 44037,
+            "personality": "balanced"
+        },
+        "New York": {
+            "name": "East Coast Network",
+            "power": 79,
+            "strategy": "territory_war",
+            "aggression": 50,
+            "target": "La Cosa Nostra",
+            "adaptation": 44037,
+            "personality": "balanced"
+        },
+        "Chicago": {
+            "name": "Midwest Outfit",
+            "power": 77,
+            "strategy": "territory_war",
+            "aggression": 50,
+            "target": "La Cosa Nostra",
+            "adaptation": 44037,
+            "personality": "balanced"
+        }
+    },
+    "relations": {},
+    "territories": {
+        "Los Angeles": {
+            "owner": "Sinaloa Cartel",
+            "control": 0,
+            "conflict": false,
+            "defense": 0
+        },
+        "Miami": {
+            "owner": "Federation",
+            "control": 0,
+            "conflict": false,
+            "defense": 0
+        },
+        "New York": {
+            "owner": "East Coast Network",
+            "control": 0,
+            "conflict": false,
+            "defense": 0
+        },
+        "Chicago": {
+            "owner": "Medellin Cartel",
+            "control": 0,
+            "conflict": false,
+            "defense": 0
+        }
+    }
 }

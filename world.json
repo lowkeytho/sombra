@@ -6,7 +6,7 @@
             "strategy": "territory_war",
             "aggression": 50,
             "target": "La Cosa Nostra",
-            "adaptation": 44037,
+            "adaptation": 44115,
             "personality": "balanced"
         },
         "Medellin": {
@@ -15,7 +15,7 @@
             "strategy": "territory_war",
             "aggression": 50,
             "target": "La Cosa Nostra",
-            "adaptation": 44037,
+            "adaptation": 44115,
             "personality": "balanced"
         },
         "Bogota": {
@@ -24,7 +24,7 @@
             "strategy": "territory_war",
             "aggression": 50,
             "target": "La Cosa Nostra",
-            "adaptation": 44037,
+            "adaptation": 44115,
             "personality": "balanced"
         },
         "Mexico City": {
@@ -33,7 +33,7 @@
             "strategy": "territory_war",
             "aggression": 50,
             "target": "La Cosa Nostra",
-            "adaptation": 44037,
+            "adaptation": 44115,
             "personality": "balanced"
         },
         "Miami": {
@@ -42,7 +42,7 @@
             "strategy": "territory_war",
             "aggression": 50,
             "target": "La Cosa Nostra",
-            "adaptation": 44037,
+            "adaptation": 44115,
             "personality": "balanced"
         },
         "Los Angeles": {
@@ -51,7 +51,7 @@
             "strategy": "territory_war",
             "aggression": 50,
             "target": "La Cosa Nostra",
-            "adaptation": 44037,
+            "adaptation": 44115,
             "personality": "balanced"
         },
         "New York": {
@@ -60,7 +60,7 @@
             "strategy": "territory_war",
             "aggression": 50,
             "target": "La Cosa Nostra",
-            "adaptation": 44037,
+            "adaptation": 44115,
             "personality": "balanced"
         },
         "Chicago": {
@@ -69,14 +69,14 @@
             "strategy": "territory_war",
             "aggression": 50,
             "target": "La Cosa Nostra",
-            "adaptation": 44037,
+            "adaptation": 44115,
             "personality": "balanced"
         }
     },
     "relations": {},
     "territories": {
         "Los Angeles": {
-            "owner": "Sinaloa Cartel",
+            "owner": "Vice Syndicate",
             "control": 0,
             "conflict": false,
             "defense": 0
@@ -88,13 +88,13 @@
             "defense": 0
         },
         "New York": {
-            "owner": "East Coast Network",
+            "owner": "Sinaloa Cartel",
             "control": 0,
             "conflict": false,
             "defense": 0
         },
         "Chicago": {
-            "owner": "Medellin Cartel",
+            "owner": "Vice Syndicate",
             "control": 0,
             "conflict": false,
             "defense": 0
